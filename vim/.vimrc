@@ -34,7 +34,12 @@ set tabstop=4
 
 " COLOR
 colo solarized
-set bg=dark
+
+if has("gui_running")
+    set bg=dark
+else
+    set t_Co=16
+endif
 
 " LISTCHARS
 set list listchars=tab:▸\ ,trail:·
