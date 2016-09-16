@@ -1,0 +1,15 @@
+[user]
+	name = Thomas Foster
+	email = thomasvfoster@gmail.com
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	cam = commit -am
+	s = status
+	dog = log --decorate --oneline --graph --all
+	d = diff
+[diff]
+	tool = p4merge
+[merge]
+	tool = p4merge
