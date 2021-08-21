@@ -9,7 +9,17 @@
 	s = status
 	dog = log --decorate --oneline --graph --all
 	d = diff
+	review = difftool --dir-diff
+	recent-branches = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
+	rb = recent-branches
 [diff]
-	tool = p4merge
+	tool = meld
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
 [merge]
-	tool = p4merge
+	conflictstyle = diff3
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
